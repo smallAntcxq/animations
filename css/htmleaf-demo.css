@@ -52,8 +52,8 @@ body{
 	font-size: 1.05em;
 	font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
 }
-.htmleaf-links a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
-.htmleaf-links a:hover,.htmleaf-links a:focus{color:#74777b;text-decoration: none;}
+a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
+a:hover,a:focus{color:#74777b;text-decoration: none;}
 .htmleaf-container{
 	margin: 0 auto;
 }
@@ -84,7 +84,6 @@ body{
 	font-size: 2em;
 	line-height: 1;
 	margin-bottom: 0;
-	font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
 }
 .htmleaf-header h1 span {
 	display: block;
@@ -177,7 +176,6 @@ body{
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 	-webkit-backface-visibility: hidden;
-	text-decoration: none;
 }
 
 .related a:hover,
