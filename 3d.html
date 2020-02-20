@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>画廊特效</title>
+	<link rel="stylesheet" type="text/css" href="3d/css/normalize.css" /><!--CSS RESET-->
+	<link rel="stylesheet" type="text/css" href="3d/css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>js和CSS3 3D立方体图片画廊特效</h1>
+		</header>
+		<h1>3D Cube Image Gallery</h1>
+		<div class="cube-container">
+
+			<div class="cube initial-position">
+
+				<img class="cube-face-image image-1" src="3d/img/photo-1445810694374-0a94739e4a03.jpg">
+				
+				<img class="cube-face-image image-2" src="3d/img/photo-1515260268569-9271009adfdb.jpg">
+				
+				<img class="cube-face-image image-3" src="3d/img/photo-1506045412240-22980140a405.jpg">
+				
+				<img class="cube-face-image image-4" src="3d/img/photo-1514041181368-bca62cceffcd.jpg">
+				
+				<img class="cube-face-image image-5" src="3d/img/photo-1488190211105-8b0e65b80b4e.jpg">
+				
+				<img class="cube-face-image image-6" src="3d/img/photo-1486334803289-1623f249dd1e.jpg">
+
+			</div>
+
+		</div>
+
+		<h2>点击下面的图片来旋转立方体</h2>
+
+		<div class="image-buttons">
+
+			<input type="image" class="show-image-1" src="3d/img/photo-1445810694374-0a94739e4a03.jpg"></input>
+
+			<input type="image" class="show-image-2" src="3d/img/photo-1515260268569-9271009adfdb.jpg"></input>
+
+			<input type="image" class="show-image-3" src="3d/img/photo-1506045412240-22980140a405.jpg"></input>
+
+			<input type="image" class="show-image-4" src="3d/img/photo-1514041181368-bca62cceffcd.jpg"></input>
+
+			<input type="image" class="show-image-5" src="3d/img/photo-1488190211105-8b0e65b80b4e.jpg"></input>
+
+			<input type="image" class="show-image-6" src="3d/img/photo-1486334803289-1623f249dd1e.jpg"></input>
+
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		//DOM load event
+		window.addEventListener("DOMContentLoaded", function () {
+
+			var cube = document.querySelector(".cube"),
+			    imageButtons = document.querySelector(".image-buttons");
+			var cubeImageClass = cube.classList[1];
+
+			//Add click event listener to image buttons container
+			imageButtons.addEventListener("click", function (e) {
+
+				//Get node type and class value of clicked element
+				var targetNode = e.target.nodeName,
+				    targetClass = e.target.className;
+
+				//Check if image input has been clicked and isn't the currently shown image
+				if (targetNode === "INPUT" && targetClass !== cubeImageClass) {
+
+					console.log("Show Image: " + targetClass.charAt(11));
+
+					//Replace previous cube image class with new class
+					//cube.classList.replace(cubeImageClass, targetClass);
+					cube.classList.remove(cubeImageClass);
+					cube.classList.add(targetClass);
+
+					//Update cube image class variable with new class
+					cubeImageClass = targetClass;
+				}
+			});
+		});
+	</script>
+</body>
+</html>
